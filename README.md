@@ -5,12 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version *2.6.3
-* Rails version *5.2.3
+* Ruby version _2.6.3
+* Rails version _5.2.3
 
 * System dependencies
-Used *prawn-pdf*
-Used *letter-opener
+Used _prawn-pdf_
+Used _letter-opener_
+**Active Storage for Image upload
 
 * Configuration
 
@@ -26,7 +27,4 @@ rails db:migrate
 bundle install
 rails s
 
-
-* Deployment instructions
-
-* ...
+**If I forgot anything , any updation comment is welcomed!!
