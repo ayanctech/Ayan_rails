@@ -1,4 +1,5 @@
 require 'csv'
+
 class Subscriber < ApplicationRecord
   def self.to_csv
       attributes = %w{name email phone}
