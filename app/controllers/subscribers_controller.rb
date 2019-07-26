@@ -8,8 +8,11 @@ class SubscribersController < ApplicationController
   end
 
   def download_pdf
-    addSubscribers()
-    @subscribers=Subscriber.all.order("name ASC")
+    if Subscriber.count<50
+      addSubscribers()
+    else
+      @subscribers=Subscriber.all.order("name ASC")
+    end
       respond_to do |format|
         format.pdf do
           pdf = Prawn::Document.new
@@ -25,8 +28,11 @@ class SubscribersController < ApplicationController
   end
 
   def download_csv
-    addSubscribers()
-    @subscribers=Subscriber.all.order("name ASC")
+    if Subscriber.count<50
+      addSubscribers()
+    else
+      @subscribers=Subscriber.all.order("name ASC")
+    end
     respond_to do |format|
       format.html
       format.csv { send_data @subscribers.to_csv, filename: "subscribers-#{Date.today}.csv" }
