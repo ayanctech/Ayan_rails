@@ -39,7 +39,7 @@ class SubscribersController < ApplicationController
     else
       @subscribers=Subscriber.all.order("name ASC")
     end
-    #@subscribers=Subscriber.all.order("name ASC")
+
     if AdminMailer.data_table(@subscribers).deliver
       redirect_to (root_path), flash: { notice: "Mail sent"}
     else
