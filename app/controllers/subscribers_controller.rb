@@ -48,14 +48,14 @@ class SubscribersController < ApplicationController
   end
 
   private
-    def addSubscribers
-      Subscriber.delete_all
-      (1..50).each do |i|
-        nam=(0...10).map { ('a'..'z').to_a[rand(26)] }.join
-        mail=nam+"@gmail.com"
-        phn=rand(10 ** 10)
-        u=Subscriber.new(:name=>nam,:email=>mail,:phone=>phn)
-        u.save
-      end
+  def addSubscribers
+    Subscriber.delete_all
+    (1..50).each do |i|
+      nam=(0...10).map { ('a'..'z').to_a[rand(26)] }.join
+      mail=nam+"@gmail.com"
+      phn=rand(10 ** 10)
+      u=Subscriber.new(:name=>nam,:email=>mail,:phone=>phn)
+      u.save
     end
+  end
 end
